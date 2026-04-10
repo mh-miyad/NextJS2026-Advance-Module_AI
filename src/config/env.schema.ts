@@ -10,6 +10,7 @@ export const envSchema = z.object({
   API_VERSION: z.string(),
   DATABASE_URL: z.string().default(process.env.DATABASE_URL!),
   JWT_SECRET: z.string().min(10).default(process.env.JWT_SECRET!),
+  JWT_REFRESH_SECRET: z.string().min(10).default(process.env.JWT_REFRESH_SECRET!),
   JWT_EXPIRES_IN: z.string().default("7d"),
 
   // Swagger
