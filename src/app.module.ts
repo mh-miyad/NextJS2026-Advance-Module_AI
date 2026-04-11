@@ -14,9 +14,6 @@ import { UsersModule } from "./modules/users/users.module";
   providers: [
     AppService,
     {
-      // nestjs-zod এর ZodValidationPipe — Zod schema দিয়ে validate করে
-      // ZSerializerInterceptor (nest-zod) remove করলাম — ওটার internal
-      // ZodType dependency AppModule এ register করা ছিল না, তাই crash করত
       provide: APP_PIPE,
       useClass: ZodValidationPipe,
     },
